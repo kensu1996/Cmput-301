@@ -66,7 +66,7 @@ public class CustomListTest {
 
         City city2 = new City("Vancouver", "BC");
         list.add(city2);
-        Assertions.assertEquals(1,list.countCities());
+        Assertions.assertEquals(list.countCities(),1);
 
 
     }
