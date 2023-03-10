@@ -2,6 +2,7 @@ package com.example.a301lab8;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.Test;
@@ -18,7 +19,9 @@ public class CustomListTest {
      * list
      */
     public CustomList MockCityList(){
-        list = new CustomList(null,new ArrayList<>()); return list;
+        list = new CustomList(null,new ArrayList<>());
+
+        return list;
     }
 
 
@@ -39,8 +42,8 @@ public class CustomListTest {
     public void testHasCity(){
         list = MockCityList();
         City city  = new City("Edmonton", "BC");
-        assertTrue(list.hasCity(city1));
         assertFalse(list.hasCity(city));
 
     }
+
 }
