@@ -66,10 +66,9 @@ public class CustomListTest {
     @Test
     void testCountCities() {
         list = MockCityList();
-        int expectedSize = 3;
         list.addCity(new City("Toronto", "ON"));
         list.addCity(new City("Montreal", "QC"));
         list.addCity(new City("Vancouver", "BC"));
-        assertEquals(list.countCities(), expectedSize);
+        assertEquals(3,list.countCities());
     }
 }
