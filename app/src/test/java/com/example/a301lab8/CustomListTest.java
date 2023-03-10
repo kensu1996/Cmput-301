@@ -6,8 +6,10 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CustomListTest {
     public City city1 = new City("Edmonton", "Alberta");
@@ -55,6 +57,16 @@ public class CustomListTest {
         City city2 = new City("Vancouver", "BC");
         assertThrows( IllegalArgumentException.class, () -> {
             list.delete(city2); });
+
+    }
+
+    @Test
+    void testCountCities(){
+        list = MockCityList();
+        City city2 = new City("Vancouver", "BC");
+        list.add(city2);
+        Assertions.assertEquals(2,list.countCities());
+
 
     }
 }
