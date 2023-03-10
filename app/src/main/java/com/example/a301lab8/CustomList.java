@@ -54,4 +54,7 @@ public class CustomList extends ArrayAdapter<City> {
 
     }
 
+    public Boolean hasCity(City city){
+    }
+
 }
