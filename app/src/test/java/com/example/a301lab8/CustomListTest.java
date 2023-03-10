@@ -15,13 +15,14 @@ public class CustomListTest {
     public City city1 = new City("Edmonton", "Alberta");
 
     private CustomList list;
+
     /**
      * create a mocklist for my citylist
-     * @return
-     * list
+     *
+     * @return list
      */
-    public CustomList MockCityList(){
-        list = new CustomList(null,new ArrayList<>());
+    public CustomList MockCityList() {
+        list = new CustomList(null, new ArrayList<>());
 
         return list;
     }
@@ -33,38 +34,41 @@ public class CustomListTest {
      * check if our current size matches the initial size plus one
      */
     @Test
-    public void addCityTest(){
+    public void addCityTest() {
         list = MockCityList();
         int listSize = list.getCount();
         list.addCity(new City("Estevan", "SK"));
-        assertEquals(list.getCount(),listSize + 1);
+        assertEquals(list.getCount(), listSize + 1);
     }
 
     @Test
-    public void testHasCity(){
+    public void testHasCity() {
         list = MockCityList();
-        City city  = new City("Edmonton", "BC");
+        City city = new City("Edmonton", "BC");
 
         assertFalse(list.hasCity(city));
 
     }
+
     @Test
-    public void testDelete(){
+    public void testDelete() {
         list = MockCityList();
         list.addCity(city1);
         list.delete(city1);
         assertFalse(list.hasCity((city1)));
         City city2 = new City("Vancouver", "BC");
-        assertThrows( IllegalArgumentException.class, () -> {
-            list.delete(city2); });
+        assertThrows(IllegalArgumentException.class, () -> {
+            list.delete(city2);
+        });
 
     }
 
     @Test
-    void testCountCities(){
+    void testCountCities() {
         list = MockCityList();
         list.addCity(new City("Toronto", "ON"));
         list.addCity(new City("Montreal", "QC"));
         list.addCity(new City("Vancouver", "BC"));
         assertEquals(list.countCities(), 3);
+    }
 }
