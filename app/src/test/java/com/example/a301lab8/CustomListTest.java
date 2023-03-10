@@ -63,7 +63,7 @@ public class CustomListTest {
     @Test
     void testCountCities(){
         list = MockCityList();
-        list.addCity(city1);
+
         City city2 = new City("Vancouver", "BC");
         list.add(city2);
         Assertions.assertEquals(2,list.countCities());
